@@ -18,27 +18,36 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  Platform for Efficiently Matching Tutors and Students.
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  Students and Tutors alike may use this platform to circumvent middlemen and find efficient arrangements based on pay and tutor qualifications (scores).
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  This product serves as a marketplace for placing micro offers for tutoring sessions and for accepting them. It uses an efficient matching system to match the highest paying offers with the most qualified tutors.
 
 ## Problem ##
   > Describe the problem your product solves.
+  Tutoring is difficult. How do students ensure that tutors are qualified? How do tutors capitalize on their knowledge without subjecting themselves to predatory tutoring agencies? This platform solves both issues in a concise manner.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  By matching the highest paid offers with the highest performing tutors (according to their own test scores), we ensure economically efficient matches.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+  'Dem tutorin' agencies be mad predatory'
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+  'Submit an offer and see who you're matched with, or submit your test scores and get matched with offers.'
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  'James did all my homework. A++, would buy again.'
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  Go to my website, dummy.
