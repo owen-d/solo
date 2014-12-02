@@ -21,12 +21,9 @@ db.on('error', console.error.bind(console, 'connection error:'));
   var Tutor = mongoose.model('Tutor', tutorSchema);
 
 
-  var findModels = function(model){
+  var findModels = function(model, callback){
     model.find(function(err, models){
-      if (err) {
-        console.log(err);
-      }
-      console.log(models);
+      callback(models);
     });
   };
 

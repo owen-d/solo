@@ -7,7 +7,7 @@ angular.module('app.jobs', [])
   // console.log(dbMethods);
   //need title, offer
   $scope.logger = function(){
-    console.log(dbMethods);
+    console.log($scope.data);
   };
 
 

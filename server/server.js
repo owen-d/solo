@@ -20,9 +20,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/db/jobs', function(req, res){
   // db.insertModel(req.body.job, db.job);
-  db.findModels(db.job);
+  db.findModels(db.job, function(data) {
+    res.send(data);
+  });
   // console.log('getjobs');
-  res.end();
+  // res.end();
 });
 app.post('/db/jobs', function(req, res){
   //save for later
@@ -49,6 +51,7 @@ app.use('*', function(req, res){
 //------------ROUTING------------------------------------------------------------------------
 
 
+//----------------Methods----------------
 
 
 
