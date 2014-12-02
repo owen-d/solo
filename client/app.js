@@ -1,5 +1,6 @@
 var app = angular.module('app', [
-  'ui.router']);
+  'ui.router',
+  'app.tutors'])
 
 // app.run(function($rootScope) {
 //   $rootScope.name = "owen";
@@ -18,7 +19,7 @@ var app = angular.module('app', [
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
     // $httpProvider.interceptors.push('AttachTokens');
-})
+});
 
 
 
