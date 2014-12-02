@@ -25,11 +25,17 @@ angular.module('app.services', [])
 
   var postJob = function(obj){
     $http.post('/db/jobs', obj)
+      .success(function(){
+        getJobs();
+      })
       .error(function(error){ console.error(error); });
   };
 
   var postTutor = function(obj){
     $http.post('/db/tutors', obj)
+      .success(function(){
+        getTutors();
+      })
       .error(function(error){ console.error(error); });
   };
 
