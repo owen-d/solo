@@ -16,9 +16,8 @@
   <div class="container-fluid">
     <table class="table table-hover table-responsive">
       <tr ng-repeat="match in data.matches.matches">
-        <td>
-          {{match.job.offer}}
-        </td>
+        <td>{{match.tutor.name}} (score: {{match.tutor.score}})</td>
+        <td>{{match.job.title}} (offer: {{match.job.offer}})</td>
       </tr>
 
     </table>

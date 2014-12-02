@@ -16,11 +16,8 @@
   <div class="container-fluid">
     <table class="table table-hover table-responsive">
       <tr ng-repeat="job in data.jobs | orderBy: '-offer'">
-        <td>
-          Offer: ${{job.offer}} Title: {{job.title}}
-        </td>
+        <td>Offer: ${{job.offer}}</td> <td> Title: {{job.title}}</td>
       </tr>
-
     </table>
   </div>
 </div>

@@ -14,9 +14,7 @@
   <div class="container-fluid">
     <table class="table table-hover table-responsive">
       <tr ng-repeat="tutor in data.tutors | orderBy: '-score'">
-        <td>
-          Score: {{tutor.score}} Name: {{tutor.name}}
-        </td>
+        <td>Score: {{tutor.score}}</td> <td> Name: {{tutor.name}}</td>
       </tr>
     </table>
   </div>
