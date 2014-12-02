@@ -1,5 +1,7 @@
 var express = require('express');
+var mongoose = require('mongoose');
 // var partials = require('express-partials');
+var db = require('../db/dbInit.js');
 var bodyParser = require('body-parser');
 
 
@@ -13,12 +15,13 @@ var app = express();
 app.use(bodyParser.json());
 // Parse forms (signup/login)
 app.use(bodyParser.urlencoded({ extended: true }));
-//------------ROUTING------------------------------------------------------------------------
 
 app.use('/db', function(req, res){
-  require('../db/dbInit.js');
+  db.find();
   res.end();
 });
+//------------ROUTING------------------------------------------------------------------------
+
 
 
 app.use(express.static(__dirname + '../../client'));
@@ -30,3 +33,8 @@ app.use(express.static(__dirname + '../../client'));
 
 console.log('Server is listening on 3000');
 app.listen(3000);
+
+
+mongoose.connect('mongodb://localhost/jobColl');
+
+module.exports = app;

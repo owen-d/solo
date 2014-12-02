@@ -1,9 +1,8 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/jobColl');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function callback () {
+
   // yay!
   var Schema = mongoose.Schema;
 
@@ -16,12 +15,12 @@ db.once('open', function callback () {
   var Job = mongoose.model('Job', jobSchema);
 
 
-  var finder = function(model){
+  var finder = function(){
     Job.find(function(err, models){
       if (err) {
         console.log(err);
       }
-      console.log(models.title);
+      console.log(models);
     });
   };
 
@@ -31,7 +30,6 @@ db.once('open', function callback () {
     if (err) console.log(err);
   });
 
-});
 
 
 
