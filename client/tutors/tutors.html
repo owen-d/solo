@@ -7,12 +7,15 @@
   <!-- <a ui-sref="shorten">Shorten</a> -->
   <h2>Tutors</h2>
   </div>
-  <!-- <div style="width:300px;">Search:
-  <input ng-model="search.url" class="form-control" ></input>
-  </div> -->
-  <!-- <div class="container-fluid">
+  <div>
+    <!-- <button class="fetch" ng-click="getTutors()">Fetch Tutors</button> -->
+    <!-- <button class="fetchJobs" ng-click="logger()">log methods</button> -->
+  </div>
+  <div class="container-fluid">
   <ul class="list-unstyled">
-    <li ng-repeat="link in data.links | filter:search | orderBy:'-visits'" class="row"><span class="col-md-4"><a href='{{ "api/links/" + link.code }}'>{{ 'shortly.com/' + link.code }}</a><br />({{ link.url }})</span><span class="col-md-2">{{link.visits}}</span><span class="col-md-4">{{ link.title }}</span></li>
+    <li ng-repeat="tutor in data.tutors | orderBy: '-score'" class="row"><span class="col-md-5">Score: {{tutor.score}}</span> <span class="col-md-5">Name: {{tutor.name}}</span></li>
+
+    <!-- <li ng-repeat="link in data.links | filter:search | orderBy:'-visits'" class="row"><span class="col-md-4"><a href='{{ "api/links/" + link.code }}'>{{ 'shortly.com/' + link.code }}</a><br />({{ link.url }})</span><span class="col-md-2">{{link.visits}}</span><span class="col-md-4">{{ link.title }}</span></li> -->
   </ul>
-  </div> -->
+  </div>
 </div>

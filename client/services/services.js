@@ -31,6 +31,8 @@ angular.module('app.services', [])
       .error(function(error){ console.error(error); });
   };
 
+  var getMatches = function(){};
+
   return {
     data: data,
     getJobs: getJobs,

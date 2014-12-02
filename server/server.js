@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/db/jobs', function(req, res){
   // db.insertModel(req.body.job, db.job);
   db.findModels(db.job, function(data) {
-    res.send(data);
+    res.json(data);
   });
   // console.log('getjobs');
   // res.end();
@@ -35,14 +35,27 @@ app.post('/db/jobs', function(req, res){
 
 app.get('/db/tutors', function(req, res){
   //placeholder
+  db.findModels(db.tutor, function(data) {
+    res.json(data);
+  });
 
-  res.end();
 });
 app.post('/db/tutors', function(req, res){
   //placeholder
 
   res.end();
 });
+// app.get('/db/matches', function(req, res){
+//   var matchData = {};
+//   db.findModels(db.job, function(data){
+//     matchData.jobs = data;
+//     db.findModels(db.tutors, function(data){
+//       matchData.tutors = data;
+//       matchData.matches = [];
+      
+//     });
+//   });
+// });
 
 app.use(express.static(__dirname + '../../client'));
 app.use('*', function(req, res){

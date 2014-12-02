@@ -10,5 +10,7 @@ angular.module('app.jobs', [])
     console.log($scope.data);
   };
 
+  $scope.getJobs();
+
 
 });
