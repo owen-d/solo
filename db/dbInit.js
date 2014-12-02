@@ -43,6 +43,12 @@ var insertModel = function(obj, model){
   });
 };
 
+var removeModel = function(obj, model){
+  model.remove(obj, function(err) { 
+       console.log('model removed') 
+    });
+};
+
 
 
 

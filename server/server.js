@@ -16,13 +16,26 @@ app.use(bodyParser.json());
 // Parse forms (signup/login)
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/db', function(req, res){
-  // db.job.remove({}, function(err) { 
-  //    console.log('collection removed') 
-  // });
-  // db.insertModel({title: 'yay', offer: 25}, db.job);
+app.get('/db/jobs', function(req, res){
+  // db.insertModel(req.body.job, db.job);
   // db.findModels(db.job);
-  
+
+  res.end();
+});
+app.post('/db/jobs', function(req, res){
+  //save for later
+
+  res.end();
+});
+
+app.get('/db/tutors', function(req, res){
+  //placeholder
+
+  res.end();
+});
+app.post('/db/tutors', function(req, res){
+  //placeholder
+
   res.end();
 });
 //------------ROUTING------------------------------------------------------------------------
