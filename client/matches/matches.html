@@ -14,16 +14,14 @@
     <!-- <button class="fetchJobs" ng-click="logger()">log methods</button> -->
   </div>
   <div class="container-fluid">
-    <div class="col-md-5">
-      <ul class="list-unstyled" >
-        <li ng-repeat="job in data.jobs | orderBy: '-offer'"><span>Offer: ${{job.offer}}</span> <span>Title: {{job.title}}</span></li>
-      </ul>
-    </div>
-    <div class="col-md-5">
-      <ul class="list-unstyled">
-        <li ng-repeat="tutor in data.tutors | orderBy: '-score'"><span>Score: ${{tutor.score}}</span> <span >Name: {{tutor.name}}</span></li>
-      </ul>
-    </div>
+    <table class="table table-hover table-responsive">
+      <tr ng-repeat="match in data.matches.matches">
+        <td>
+          {{match.job.offer}}
+        </td>
+      </tr>
+
+    </table>
   </div>
 
     <!-- <li ng-repeat="link in data.links | filter:search | orderBy:'-visits'" class="row"><span class="col-md-4"><a href='{{ "api/links/" + link.code }}'>{{ 'shortly.com/' + link.code }}</a><br />({{ link.url }})</span><span class="col-md-2">{{link.visits}}</span><span class="col-md-4">{{ link.title }}</span></li> -->

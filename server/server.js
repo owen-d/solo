@@ -62,7 +62,6 @@ app.get('/db/matches', function(req, res){
       for (var i = 0; i < limit; i++) {
         matchData.matches.push({job: matchData.jobs[i], tutor: matchData.tutors[i]});
       }
-      console.log('matcdata', matchData);
       res.json(matchData);
     });
   });

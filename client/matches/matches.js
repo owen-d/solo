@@ -8,7 +8,7 @@ angular.module('app.matches', [])
   // $scope.getJobs();
   // $scope.getTutors();
   $scope.getMatches();
-  setTimeout(function(){console.log($scope.data);}.bind($scope), 2000);
+  setTimeout(function(){console.log($scope.data.matches.matches);}.bind($scope), 2000);
 
 
 });
