@@ -31,13 +31,21 @@ angular.module('app.services', [])
       .error(function(error){ console.error(error); });
   };
 
-  var getMatches = function(){};
+  var getMatches = function(){
+    $http.get('/db/matches')
+      .success(function(matches){
+        data.matches = matches;
+        // console.log(data.matches);
+      })
+      .error(function(error) { console.error(error); });
+  };
 
   return {
     data: data,
     getJobs: getJobs,
     getTutors: getTutors,
     postJob: postJob,
-    postTutor: postTutor
+    postTutor: postTutor,
+    getMatches: getMatches
   }
 });

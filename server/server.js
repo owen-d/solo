@@ -45,17 +45,28 @@ app.post('/db/tutors', function(req, res){
 
   res.end();
 });
-// app.get('/db/matches', function(req, res){
-//   var matchData = {};
-//   db.findModels(db.job, function(data){
-//     matchData.jobs = data;
-//     db.findModels(db.tutors, function(data){
-//       matchData.tutors = data;
-//       matchData.matches = [];
-      
-//     });
-//   });
-// });
+app.get('/db/matches', function(req, res){
+  var matchData = {};
+  db.findModels(db.job, function(data){
+    matchData.jobs = data;
+    db.findModels(db.tutor, function(data){
+      matchData.tutors = data;
+      matchData.matches = [];
+      matchData.jobs.sort(function(a,b){
+        return b.offer - a.offer;
+      });
+      matchData.tutors.sort(function(a,b){
+        return b.score - a.score;
+      });
+      var limit = Math.min(matchData.jobs.length, matchData.tutors.length);
+      for (var i = 0; i < limit; i++) {
+        matchData.matches.push({job: matchData.jobs[i], tutor: matchData.tutors[i]});
+      }
+      console.log('matcdata', matchData);
+      res.json(matchData);
+    });
+  });
+});
 
 app.use(express.static(__dirname + '../../client'));
 app.use('*', function(req, res){
