@@ -13,6 +13,12 @@ var app = express();
 app.use(bodyParser.json());
 // Parse forms (signup/login)
 app.use(bodyParser.urlencoded({ extended: true }));
+//------------ROUTING------------------------------------------------------------------------
+
+app.use('/db', function(req, res){
+  require('../db/dbInit.js');
+  res.end();
+});
 
 
 app.use(express.static(__dirname + '../../client'));

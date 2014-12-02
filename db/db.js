@@ -1,10 +1,22 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var db = require('./dbInit.js');
 
-var jobSchema = new Schema({
-  title: String,
-  offer: Number,
-  date: { type: Date, default: Date.now }
+var finder = function(model){
+  Model.find(function(err, models){
+    if (err) {
+      console.log(err);
+    }
+    console.log(models);
+  });
+};
+
+var firstJob = new Job({title: 'firstJob', offer: 500});
+
+firstJob.save(function(err, firstJob){
+  if (err) console.log(err);
 });
 
-var Job = mongoose.model('Job', jobSchema);
+finder(Job);
+
+
+module.exports = finder;
