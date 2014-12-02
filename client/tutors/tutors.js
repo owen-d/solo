@@ -1,7 +1,7 @@
 angular.module('app.tutors', [])
 
 
-.controller('TutorsController', function ($scope, Links) {
+.controller('TutorsController', function ($scope) {
   // angular.extend($scope, Links);
 
 
