@@ -12,11 +12,17 @@ db.on('error', console.error.bind(console, 'connection error:'));
     date: { type: Date, default: Date.now }
   });
 
+  var tutorSchema = new Schema({
+    name: String,
+    score: Number
+  });
+
   var Job = mongoose.model('Job', jobSchema);
+  var Tutor = mongoose.model('Tutor', tutorSchema);
 
 
-  var finder = function(){
-    Job.find(function(err, models){
+  var findModels = function(model){
+    model.find(function(err, models){
       if (err) {
         console.log(err);
       }
@@ -24,11 +30,20 @@ db.on('error', console.error.bind(console, 'connection error:'));
     });
   };
 
-  var firstJob = new Job({title: 'firstJob', offer: 500});
+  // var firstJob = new Job({title: 'firstJob', offer: 500});
 
-  firstJob.save(function(err, firstJob){
+  // firstJob.save(function(err, firstJob){
+  //   if (err) console.log(err);
+  // });
+
+var insertModel = function(obj, model){
+  var newModel = new model(obj);
+  newModel.save(function(err, newModel){
     if (err) console.log(err);
   });
+};
+
+
 
 
 
@@ -43,5 +58,8 @@ db.on('error', console.error.bind(console, 'connection error:'));
 //-------------------------------------------------------------------------------------------
 module.exports = {
   db: db,
-  find: finder
+  findModels: findModels,
+  insertModel: insertModel,
+  job: Job,
+  tutor: Tutor
 };

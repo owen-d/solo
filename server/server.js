@@ -17,7 +17,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/db', function(req, res){
-  db.find();
+  // db.job.remove({}, function(err) { 
+  //    console.log('collection removed') 
+  // });
+  // db.insertModel({title: 'yay', offer: 25}, db.job);
+  // db.findModels(db.job);
+  
   res.end();
 });
 //------------ROUTING------------------------------------------------------------------------
