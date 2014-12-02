@@ -7,10 +7,19 @@
   <!-- <a ui-sref="shorten">Shorten</a> -->
   <h2>Tutors</h2>
   </div>
-  <div>
-    <!-- <button class="fetch" ng-click="getTutors()">Fetch Tutors</button> -->
-    <!-- <button class="fetchJobs" ng-click="logger()">log methods</button> -->
-  </div>
+    <button class="btn btn-default" ng-click="hidden = !hidden;">Add a new Tutor</button>
+    <form role="form" ng-hide="hidden">
+      <div class="form-group">
+        <label for="jobTitle">Name:</label>
+        <input  class="form-control"  placeholder="name" ng-model="tutor.name">
+      </div>
+      <div class="form-group">
+        <label for="offer">Score</label>
+        <input  class="form-control"  placeholder="score" ng-model="tutor.score">
+      </div>
+      <button class="btn btn-default" ng-click="postTutor({name: tutor.name, score: tutor.score})" >Add Tutor</button>
+    </form>
+
   <div class="container-fluid">
     <table class="table table-hover table-responsive">
       <tr ng-repeat="tutor in data.tutors | orderBy: '-score'">

@@ -72,6 +72,7 @@ var populate = function(){
 
 //-------------------------------------------------------------------------------------------
 module.exports = {
+  remove: removeModel,
   db: db,
   findModels: findModels,
   insertModel: insertModel,

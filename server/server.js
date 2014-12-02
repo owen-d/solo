@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/db/jobs', function(req, res){
   // db.insertModel(req.body.job, db.job);
+
   db.findModels(db.job, function(data) {
     res.json(data);
   });
@@ -28,7 +29,8 @@ app.get('/db/jobs', function(req, res){
 });
 app.post('/db/jobs', function(req, res){
   //save for later
-  console.log(req.body);
+  // console.log(req.body);
+  db.insertModel(req.body, db.job);
 
   res.end();
 });
@@ -42,6 +44,7 @@ app.get('/db/tutors', function(req, res){
 });
 app.post('/db/tutors', function(req, res){
   //placeholder
+  db.insertModel(req.body, db.tutor);
 
   res.end();
 });
@@ -65,6 +68,13 @@ app.get('/db/matches', function(req, res){
       res.json(matchData);
     });
   });
+});
+
+app.get('/reset', function(req, res, next){
+  db.remove({}, db.job);
+  db.remove({}, db.tutor);
+  db.populate();
+  next();
 });
 
 app.use(express.static(__dirname + '../../client'));

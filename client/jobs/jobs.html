@@ -6,9 +6,19 @@
   <!-- <a ui-sref="shorten">Shorten</a> -->
   <h2>Jobs</h2>
   </div>
-  <!-- <div style="width:300px;">Search:
-  <input ng-model="search.url" class="form-control" ></input>
-  </div> -->
+    <button class="btn btn-default" ng-click="hidden = !hidden;">Add a new Job</button>
+    <form role="form" ng-hide="hidden">
+      <div class="form-group">
+        <label for="jobTitle">Job Title:</label>
+        <input  class="form-control"  placeholder="jobName" ng-model="job.title">
+      </div>
+      <div class="form-group">
+        <label for="offer">Offer</label>
+        <input  class="form-control"  placeholder="offer" ng-model="job.offer">
+      </div>
+      <button class="btn btn-default" ng-click="postJob({title: job.title, offer: job.offer})">Add Job</button>
+    </form>
+
   <div>
     <!-- <button class="fetch" ng-click="getJobs()">Fetch Jobs</button> -->
     <!-- <button class="fetchJobs" ng-click="logger()">log methods</button> -->

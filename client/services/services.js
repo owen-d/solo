@@ -3,6 +3,8 @@ angular.module('app.services', [])
 
 .factory('dbMethods', function ($http) {
 
+  var hidden = true;
+
   var data = {};
 
   var getJobs = function() {
@@ -46,6 +48,7 @@ angular.module('app.services', [])
     getTutors: getTutors,
     postJob: postJob,
     postTutor: postTutor,
-    getMatches: getMatches
+    getMatches: getMatches,
+    hidden: hidden
   }
 });
