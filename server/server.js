@@ -38,11 +38,15 @@ app.post('/db/tutors', function(req, res){
 
   res.end();
 });
+
+app.use(express.static(__dirname + '../../client'));
+app.use('*', function(req, res){
+  res.redirect('/');
+});
 //------------ROUTING------------------------------------------------------------------------
 
 
 
-app.use(express.static(__dirname + '../../client'));
 
 
 // app.get('*', function(req, res) {
