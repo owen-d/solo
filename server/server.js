@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 // var partials = require('express-partials');
 var db = require('../db/dbInit.js');
 var bodyParser = require('body-parser');
+var url = require('url');
 
 
 
@@ -16,14 +17,16 @@ app.use(bodyParser.json());
 // Parse forms (signup/login)
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
 app.get('/db/jobs', function(req, res){
   // db.insertModel(req.body.job, db.job);
-  // db.findModels(db.job);
-  
+  db.findModels(db.job);
+  // console.log('getjobs');
   res.end();
 });
 app.post('/db/jobs', function(req, res){
   //save for later
+  console.log(req.body);
 
   res.end();
 });

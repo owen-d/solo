@@ -2,7 +2,8 @@ var app = angular.module('app', [
   'ui.router',
   'app.tutors',
   'app.jobs',
-  'app.matches'])
+  'app.matches',
+  'app.services'])
 
 // app.run(function($rootScope) {
 //   $rootScope.name = "owen";
