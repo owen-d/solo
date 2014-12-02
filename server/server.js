@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/db/jobs', function(req, res){
   // db.insertModel(req.body.job, db.job);
   // db.findModels(db.job);
-
+  
   res.end();
 });
 app.post('/db/jobs', function(req, res){

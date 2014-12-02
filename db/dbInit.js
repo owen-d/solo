@@ -50,7 +50,18 @@ var removeModel = function(obj, model){
 };
 
 
-
+var populate = function(){
+  var x = 0;
+  var y = 0;
+  while (x < 10) {
+    insertModel({name: 'tutor #'+ (x+1), score: Math.floor(Math.random()*100)}, Tutor);
+    x++;
+  }
+  while (y < 7) {
+    insertModel({title: 'job #'+ (y+1), offer: Math.floor(Math.random()*100)}, Job);
+    y++;
+  }
+};
 
 
 
@@ -67,5 +78,6 @@ module.exports = {
   findModels: findModels,
   insertModel: insertModel,
   job: Job,
-  tutor: Tutor
+  tutor: Tutor,
+  populate: populate
 };
