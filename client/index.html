@@ -11,11 +11,18 @@
     <script src="matches/matches.js"></script>
     <script src="services/services.js"></script>
   <body>
-    <h2>hardlyHomeworking</h2>
+
+    <div class="row">
+    </div>
+      <h2>hardlyHomeworking</h2>
     <div ui-view>
-      <a ui-sref="tutors">tutors!</a>
-      <a ui-sref="jobs">jobs!</a>
-      <a ui-sref="matches">matches!</a>
+      <ul class="nav nav-pills">
+        <li role="presentation"><a ui-sref="tutors">tutors!</a></li>
+        <li role="presentation"><a ui-sref="jobs">jobs!</a></li>
+        <li role="presentation"><a ui-sref="matches">matches!</a></li>
+      </ul>
+      
+      
       <!-- <input type="text" ng-model="yourName" placeholder="Enter a name here"> -->
             
     </div>
