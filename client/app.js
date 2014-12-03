@@ -13,7 +13,7 @@ var app = angular.module('app', [
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-
+  
     .state('tutors', {
       url: '/tutors',
       templateUrl: 'tutors/tutors.html',

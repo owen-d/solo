@@ -5,7 +5,7 @@
     <li role="presentation"><a ui-sref="jobs">jobs!</a></li>
     <li role="presentation"><a ui-sref="matches">matches!</a></li>
   </ul>
-  
+
   <div class="container">
 
     
@@ -22,12 +22,13 @@
         <label for="offer">Score</label>
         <input  class="form-control"  placeholder="score" ng-model="tutor.score">
       </div>
-      <button class="btn btn-default" ng-click="postTutor({name: tutor.name, score: tutor.score})" >Add Tutor</button>
+      <button class="btn btn-default" ng-click="postTutor({name: tutor.name, score: tutor.score}); hidden = !hidden;" >Add Tutor</button>
     </form>
 
   <div class="container-fluid">
     <table class="table table-hover table-responsive">
       <tr ng-repeat="tutor in data.tutors | orderBy: '-score'">
+        <td>{{count}}</td>
         <td>Score: {{tutor.score}}</td> <td> Name: {{tutor.name}}</td>
       </tr>
     </table>

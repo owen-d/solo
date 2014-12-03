@@ -21,7 +21,7 @@
         <label for="offer">Offer</label>
         <input  class="form-control"  placeholder="offer" ng-model="job.offer">
       </div>
-      <button class="btn btn-default" ng-click="postJob({title: job.title, offer: job.offer})">Add Job</button>
+      <button class="btn btn-default" ng-click="postJob({title: job.title, offer: job.offer}); hidden = !hidden;">Add Job</button>
     </form>
 
   <div>
